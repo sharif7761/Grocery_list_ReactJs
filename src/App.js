@@ -16,7 +16,7 @@ function App() {
     } else if(name && isEditing) {
       // editing
     } else {
-      // add
+      showAlert(true, 'success', 'item added to the list')
       const newItem = {
         id: new Date().getTime().toString(),
         title: name
@@ -35,7 +35,7 @@ function App() {
       <section className='section-center'>
         <form className='grocery-form' onSubmit={handleSubmit}>
           {
-            alert.show && <Alert {...alert} />
+            alert.show && <Alert {...alert} removeAlert={showAlert} />
           }
           <h3>grocery bud</h3>
           <div className='form-control'>
